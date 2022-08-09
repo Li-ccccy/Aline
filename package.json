@@ -1,0 +1,44 @@
+{
+  "name": "alienwebapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app:warehouse": "cd packages/Warehouse && npm run dev --host",
+    "prepare": "husky install"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "lichaoyu",
+  "license": "ISC",
+  "dependencies": {
+    "ant-design-vue": "^3.2.11",
+    "unplugin-vue-components": "^0.22.1",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.0.3",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "@vitejs/plugin-vue-jsx": "^2.0.0",
+    "commitlint": "^17.0.3",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0",
+    "vue-tsc": "^0.38.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.@(js|ts|tsx|vue)": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
