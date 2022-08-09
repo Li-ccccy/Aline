@@ -12,12 +12,12 @@
   "author": "lichaoyu",
   "license": "ISC",
   "dependencies": {
-    "@commitlint/cli": "^17.0.3",
     "ant-design-vue": "^3.2.11",
     "unplugin-vue-components": "^0.22.1",
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@vitejs/plugin-vue": "^3.0.0",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
