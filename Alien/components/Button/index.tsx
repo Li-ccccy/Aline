@@ -2,6 +2,6 @@ import { defineComponent } from "vue";
 import { Button } from "ant-design-vue";
 export default defineComponent({
   render() {
-    return <Button>测试</Button>;
+    return <div>测试</div>;
   },
 });
