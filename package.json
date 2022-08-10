@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "app:warehouse": "cd packages/Warehouse && npm run dev --host",
+    "start": "node start/index",
+    "app:warehouse": "cd packages/Warehouse && pnpm run dev --host",
     "prepare": "husky install"
   },
   "type": "module",

@@ -3,3 +3,5 @@ packages:
   - "packages/*"
   # all packages in subdirs of components/
   - "Alien/**"
+  # all start in start of start/
+  - "start"
