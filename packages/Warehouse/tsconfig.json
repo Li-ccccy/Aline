@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": "./", // 解析非相对模块的基础地址，默认是当前目录
+    "paths": {
+      // 路径映射，相对于baseUrl
+      "@/*": ["src/*"]
+    },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -14,10 +19,17 @@
     "skipLibCheck": true
   },
   "include": [
-    "./**/*/src/**/*.ts",
-    "./**/*/src/**/*.d.ts",
-    "./**/*/src/**/*.tsx",
-    "./**/*/src/**/*.vue"
+    "./*.d.ts",
+    "./*.ts",
+    "vue.d.ts",
+    "src/*.d.ts",
+    "src/*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/*.ts",
+    "types/*.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
