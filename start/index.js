@@ -10,7 +10,7 @@ const init = async () => {
     detached: false,
     env: {
       ...process.env,
-      PCK: "cds",
+      // 可以写自定义参数变量
     },
   });
 };

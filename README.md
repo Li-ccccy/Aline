@@ -11,3 +11,5 @@
 #### 5：内部自己引用 当前项目中的package.json 内 dependencies 下 新增 "@alien/components（这里的名称与对应的package中的name字段相同）": "workspace:*" 。 然后运行pnpm -F  xxx install 
 
 #### 6: 创建新的项目 正常创建流程，然后修改pageage中的name : @app/xxxx 
+
+#### 7: 启动项目 ： pnpm start  然后选择你所要启动的项目。
