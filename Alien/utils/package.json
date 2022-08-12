@@ -2,5 +2,9 @@
   "name": "@alien/utils",
   "private": true,
   "version": "0.0.1",
-  "type": "module"
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@alien/hooks": "workspace:^0.0.1"
+  }
 }
