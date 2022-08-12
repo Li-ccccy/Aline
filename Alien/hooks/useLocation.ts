@@ -1,5 +1,4 @@
-// tonken hooks
-//
+// 获取和设置本地存储的hooks
 import { ref } from "vue";
 type initial = string | object | Array<any>;
 export const useLocation = (key: string, initialValue?: initial) => {

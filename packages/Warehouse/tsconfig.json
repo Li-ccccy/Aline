@@ -21,15 +21,15 @@
   "include": [
     "./*.d.ts",
     "./*.ts",
+    "./**/*.tsx",
     "vue.d.ts",
     "src/*.d.ts",
     "src/*.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
-    "src/**/*.tsx",
     "src/**/*.vue",
-    "types/*.ts",
-    "types/*.d.ts"
+    "src/types/*.ts",
+    "src/types/*.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

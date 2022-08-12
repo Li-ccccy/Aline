@@ -1,5 +1,4 @@
-import Logo from "../public/alien.logo.svg";
-export default (): void => {
+export default (Logo: string): void => {
   let link = document.createElement("link");
   link.setAttribute("rel", "icon");
   link.setAttribute("type", "image/svg+xml");
