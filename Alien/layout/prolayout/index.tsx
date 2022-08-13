@@ -6,11 +6,13 @@ import { css } from "@emotion/css";
 import { map, size } from "lodash";
 import { Stack } from "../../components/Stack";
 // 点击菜单，跳转路由
-export const openMenu = (menu: MenuType) => {
+export const openMenu = () => {
   const router = useRouter();
-  return () => {
-    router.push(menu.path);
-  };
+  return [
+    (menu: MenuType) => {
+      router.push(menu.path);
+    },
+  ];
 };
 
 const MenuItem = defineComponent({
@@ -60,16 +62,16 @@ const MenuItem = defineComponent({
 
 type Props = {
   loading?: boolean;
-  menus?: Array<any>;
-  onItemClick?: <T>(_: T) => void;
+  menus?: Array<MenuType>;
+  onItemClick?: (_: MenuType) => void;
   menuOpen: Ref<boolean>;
   Logo: string;
 };
 
 export const ProLayout = defineComponent((props: Props, context) => {
   const { Sider, Content } = Layout;
-  const openKeysRef = ref([]);
-  const selectedKeysRef = ref([]);
+  const openKeysRef = ref(["/manage/base2"]);
+  const selectedKeysRef = ref(["/manage/base3"]);
   return () => (
     <>
       <Layout class={css({ height: "100vh" })}>

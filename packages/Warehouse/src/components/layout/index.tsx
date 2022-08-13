@@ -6,16 +6,36 @@ import { HeaderHeight } from "./config";
 import { useSwitch } from "@alien/hooks";
 import wLogo from "@alien/public/logo/logo-w.png";
 import swLogo from "@alien/public/logo/slogo-w.png";
+import { AppleOutlined, DingdingOutlined } from "@ant-design/icons-vue";
 const LogoScelist = (type: Ref<boolean>) => (type.value ? swLogo : wLogo);
 export const BasicLayout = defineComponent({
   setup() {
     const [menuOpen, setOpen] = useSwitch();
-    console.log(menuOpen);
+    const [routerPush] = openMenu();
     return () => (
       <>
         <ProLayout
-          loading={true}
-          menus={[]}
+          loading={false}
+          //菜单项
+          menus={[
+            {
+              path: "/manage/base1",
+              name: "base1",
+              icon: <AppleOutlined></AppleOutlined>,
+            },
+            {
+              path: "/manage/base2",
+              name: "base2",
+              icon: <DingdingOutlined></DingdingOutlined>,
+              children: [
+                {
+                  path: "/manage/base3",
+                  name: "base3",
+                  icon: <DingdingOutlined></DingdingOutlined>,
+                },
+              ],
+            },
+          ]}
           menuOpen={menuOpen}
           Logo={LogoScelist(menuOpen)}
           v-slots={{
@@ -27,15 +47,13 @@ export const BasicLayout = defineComponent({
               />
             ),
           }}
-          onItemClick={(resource: any) => {
-            console.log("@@@resource", resource);
-            openMenu(resource);
+          onItemClick={(resource) => {
+            routerPush(resource);
           }}
         >
           <div
             class={css({
               height: `calc(100vh - ${HeaderHeight}px)`,
-              overflowY: "auto",
               padding: 20,
             })}
           >

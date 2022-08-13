@@ -17,3 +17,37 @@ export const Base = defineComponent({
     );
   },
 });
+export const Base2 = defineComponent({
+  render() {
+    return (
+      <>
+        <div
+        // class={css({
+        //   width: "100%",
+        //   height: "100%",
+        //   background: "#fff",
+        // })}
+        >
+          我在测试22
+        </div>
+      </>
+    );
+  },
+});
+export const Base3 = defineComponent({
+  render() {
+    return (
+      <>
+        <div
+        // class={css({
+        //   width: "100%",
+        //   height: "100%",
+        //   background: "#fff",
+        // })}
+        >
+          我在测试3333
+        </div>
+      </>
+    );
+  },
+});

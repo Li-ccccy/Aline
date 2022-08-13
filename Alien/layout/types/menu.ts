@@ -4,7 +4,6 @@ export interface MenuType {
   id?: number;
   path: string;
   name: string;
-  children?: Array<any>;
+  children?: Array<MenuType>;
   icon: VNode;
-  onItemClick: Function;
 }
