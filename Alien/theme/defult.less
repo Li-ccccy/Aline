@@ -1,0 +1,98 @@
+@primary-color: #272381; // 全局主色
+@link-color: #1890ff; // 链接色
+@success-color: #52c41a; // 成功色
+@warning-color: #faad14; // 警告色
+@error-color: #f5222d; // 错误色
+@font-size-base: 14px; // 主字号
+@heading-color: rgba(0, 0, 0, 0.85); // 标题色
+@text-color: rgba(0, 0, 0, 0.65); // 主文本色
+@text-color-secondary: rgba(0, 0, 0, 0.45); // 次文本色
+@disabled-color: rgba(0, 0, 0, 0.25); // 失效色
+@border-radius-base: 4px; // 组件/浮层圆角
+@border-color-base: #d9d9d9; // 边框色
+@menu-active-color: #fff; // 菜单选中颜色
+@menu-base-color: rgba(255, 255, 255, 0.55); // 菜单默认颜色
+@box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15); // 浮层阴影
+@from-item-border-base: #6b67ec; // 输入框，选择框...的颜色
+@cascader-menu-item-active: #e6eaff;
+// 菜单改色
+.ant-menu-submenu-popup a {
+  color: @primary-color;
+} // 左侧菜单颜色
+.ant-layout-sider,
+.ant-menu,
+.ant-menu-submenu-popup > .ant-menu {
+  background-color: @primary-color;
+}
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+  border-right: 0;
+}
+.ant-menu,
+.ant-menu-item,
+.ant-menu-item a,
+.ant-menu-submenu-expand-icon,
+.ant-menu-submenu-arrow {
+  color: @menu-base-color;
+}
+.ant-menu-sub.ant-menu-inline,
+.ant-menu-item,
+.ant-menu {
+  background-color: transparent;
+}
+.ant-menu-item-selected,
+.ant-menu-submenu-selected,
+.ant-menu-submenu-title:hover,
+.ant-menu-submenu-active,
+.ant-menu-item:hover,
+.ant-menu-item a:hover,
+.ant-menu-item-selected a,
+.ant-menu-item-selected a:hover,
+.ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow,
+.ant-menu-submenu-title:hover,
+.ant-menu-vertical .ant-menu-submenu-selected {
+  color: @menu-active-color;
+}
+.ant-menu-inline .ant-menu-item::after {
+  border-right: none;
+}
+.ant-menu-inline,
+.ant-menu-vertical {
+  border: none;
+}
+.ant-menu-inline .ant-menu-item {
+  width: 100%;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #6b67ec;
+}
+.ant-menu-light .ant-menu-item:hover,
+.ant-menu-light .ant-menu-item-active,
+.ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-light .ant-menu-submenu-active,
+.ant-menu-light .ant-menu-submenu-title:hover {
+  color: @menu-active-color;
+}
+:root {
+  --antd-wave-shadow-color: #6b67ec;
+}
+
+// 输入框，选选择框等改色
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border-color: @from-item-border-base;
+  box-shadow: 0 0 0 2px rgb(107 103 236 / 20%);
+}
+.ant-input:hover,
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: @from-item-border-base;
+}
+.ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled),
+.ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
+  background-color: @cascader-menu-item-active;
+}

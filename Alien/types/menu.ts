@@ -1,4 +1,6 @@
-export interface MenuType {
-  menu: Object;
-  onItemClick: Function;
-}
+// export interface MenuType {
+//   menu: Object;
+//   onItemClick: Function;
+// }
+
+export {};

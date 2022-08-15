@@ -40,7 +40,6 @@ export const Header = defineComponent((props: Headertype) => {
             }}
           ></MenuFoldOutlined>
         )}
-
         <div
           class={css({
             flexGrow: 1,

@@ -1,9 +1,10 @@
-import { defineComponent, ref, Ref } from "vue";
+import { defineComponent, ref, Transition, watch, Ref } from "vue";
 import { Layout, Menu, Spin } from "ant-design-vue";
 import { useRoute, useRouter } from "vue-router";
 import { MenuType } from "../types/menu";
+import { ProLayoutProps } from "../types/ProLayout";
 import { css } from "@emotion/css";
-import { map, size } from "lodash";
+import { map, size, forEach } from "lodash";
 import { Stack } from "../../components/Stack";
 // 点击菜单，跳转路由
 export const openMenu = () => {
@@ -14,7 +15,7 @@ export const openMenu = () => {
     },
   ];
 };
-
+// 菜单项
 const MenuItem = defineComponent({
   props: {
     menu: {
@@ -60,18 +61,63 @@ const MenuItem = defineComponent({
   },
 });
 
-type Props = {
-  loading?: boolean;
-  menus?: Array<MenuType>;
-  onItemClick?: (_: MenuType) => void;
-  menuOpen: Ref<boolean>;
-  Logo: string;
+//  找到菜单需要选择和打开的工具函数
+const findTargetResource = (
+  resources: any,
+  path: any,
+  target: any,
+  parent: any
+) => {
+  forEach(resources, (resource) => {
+    if (resource.path && path && resource.path === path) {
+      target.current = resource;
+      target.parent = parent;
+      return;
+    }
+    findTargetResource(resource.children, path, target, [...parent, resource]);
+  });
 };
 
-export const ProLayout = defineComponent((props: Props, context) => {
+const findTargetResourceExtra = (
+  resources: any,
+  path: any,
+  target: any,
+  parent: any
+) => {
+  forEach(resources, (resource) => {
+    if (resource.path && path && path.indexOf(resource.path) > -1) {
+      target.current = resource;
+      target.parent = parent;
+      return;
+    }
+    findTargetResourceExtra(resource.children, path, target, [
+      ...parent,
+      resource,
+    ]);
+  });
+};
+
+// 整体的结构布局
+export const ProLayout = defineComponent((props: ProLayoutProps, context) => {
   const { Sider, Content } = Layout;
-  const openKeysRef = ref(["/manage/base2"]);
-  const selectedKeysRef = ref(["/manage/base3"]);
+  const route = useRoute();
+  const openKeysRef: Ref<any> = ref([]);
+  const selectedKeysRef: Ref<any> = ref([]);
+  watch(
+    [route, props.menus],
+    () => {
+      const target: any = {};
+      findTargetResource(props.menus, route.path, target, []);
+      if (!target.current) {
+        findTargetResourceExtra(props.menus, route.path, target, []);
+      }
+      if (target.current) {
+        selectedKeysRef.value = [target.current.path];
+        openKeysRef.value = map(target.parent, (r) => r.path);
+      }
+    },
+    { immediate: true }
+  );
   return () => (
     <>
       <Layout class={css({ height: "100vh" })}>
@@ -83,14 +129,31 @@ export const ProLayout = defineComponent((props: Props, context) => {
           <div
             class={css({
               width: "100%",
+              height: props.HeaderHeight,
               padding: "16px",
-              ">img": {
-                height: "100%",
+              img: {
                 width: props.menuOpen.value ? "40px" : "100%",
+              },
+              ".fade-leave-active": {
+                width: "0",
+              },
+              ".fade-enter-active": {
+                transition: "width 0.3s ease",
+              },
+              ".fade-enter-from,.fade-leave-to": {
+                width: "0",
               },
             })}
           >
-            <img src={props.Logo} alt="" />
+            <Stack
+              justify={"center"}
+              align={"center"}
+              style={{ width: "100%" }}
+            >
+              <Transition name="fade">
+                <img src={props.Logo} alt="" key={props.Logo} />
+              </Transition>
+            </Stack>
           </div>
           {/* 获取资源树菜单 */}
           {props.loading && (
@@ -126,10 +189,12 @@ export const ProLayout = defineComponent((props: Props, context) => {
     </>
   );
 });
+
 ProLayout.props = {
   loading: Boolean,
   menus: Array,
   onItemClick: Function,
   menuOpen: Boolean,
   Logo: String,
+  HeaderHeight: Number,
 };

@@ -21,4 +21,12 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"), //把 src 的别名设置为 @
     },
   },
+  css: {
+    // css预处理器
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+      },
+    },
+  },
 });

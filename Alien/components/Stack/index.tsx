@@ -39,13 +39,13 @@ export const Stack = defineComponent((props: StackType, context: any) => {
   };
 });
 
-// Stack.props = {
-//   inline: {
-//     type: Boolean,
-//     default: true,
-//   },
-//   align: String,
-//   justify: String,
-//   wrap: String,
-//   spacing: String,
-// };
+Stack.props = {
+  inline: {
+    type: Boolean,
+    default: true,
+  },
+  align: String,
+  justify: String,
+  wrap: String,
+  spacing: String,
+};
