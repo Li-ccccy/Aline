@@ -1,6 +1,6 @@
 // 获取和设置本地存储的hooks
 import { ref, watch, Ref } from "vue";
-type initial = string | object | Array<any>;
+type initial = number | string | object | Array<any>;
 export const useLocation = (
   key: string,
   initialValue?: initial

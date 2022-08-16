@@ -19,6 +19,7 @@ import {
 import { EChart } from "@alien/components";
 import { PieChart } from "echarts/charts";
 import { css } from "@emotion/css";
+import { auth, setAuth } from "@alien/utils";
 export const Base = defineComponent({
   setup() {
     const options: CascaderProps["options"] = [
@@ -97,6 +98,7 @@ export const Base = defineComponent({
         },
       ],
     };
+    console.log(auth.value);
     return { value, options, checked1, EchartOptions };
   },
   render() {
@@ -128,7 +130,14 @@ export const Base = defineComponent({
           <InputNumber></InputNumber>
           <Pagination total={50}></Pagination>
           <Radio>Radio</Radio>
-          <Button type={"primary"}>123</Button>
+          <Button
+            type={"primary"}
+            onClick={() => {
+              setAuth(789);
+            }}
+          >
+            123
+          </Button>
           <TimePicker></TimePicker>
           <DatePicker picker={"quarter"} />
           <DatePicker picker={"month"} />
