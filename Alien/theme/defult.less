@@ -1,5 +1,5 @@
-@primary-color: #272381; // 全局主色
-@link-color: #1890ff; // 链接色
+@primary-color-static: #272381; // 全局主色
+@link-color: #635ddf; // 链接色
 @success-color: #52c41a; // 成功色
 @warning-color: #faad14; // 警告色
 @error-color: #f5222d; // 错误色
@@ -17,12 +17,15 @@
 @cascader-menu-item-active: #e6eaff;
 // 菜单改色
 .ant-menu-submenu-popup a {
-  color: @primary-color;
+  color: @primary-color-static;
 } // 左侧菜单颜色
 .ant-layout-sider,
 .ant-menu,
+.ant-menu-submenu-popup > .ant-menu,
+.ant-layout-sider,
+.ant-menu,
 .ant-menu-submenu-popup > .ant-menu {
-  background-color: @primary-color;
+  background-color: @primary-color-static;
 }
 .ant-menu-inline,
 .ant-menu-vertical,
@@ -65,8 +68,10 @@
   width: 100%;
 }
 
-.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  background-color: #6b67ec;
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected,
+.ant-slider-track,
+.ant-slider:hover .ant-slider-track {
+  background-color: @primary-color;
 }
 .ant-menu-light .ant-menu-item:hover,
 .ant-menu-light .ant-menu-item-active,
@@ -84,15 +89,42 @@
 .ant-input:focus,
 .ant-input-focused,
 .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
-  .ant-select-selector {
+  .ant-select-selector,
+.ant-picker-focused {
   border-color: @from-item-border-base;
   box-shadow: 0 0 0 2px rgb(107 103 236 / 20%);
 }
 .ant-input:hover,
-.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector,
+.ant-picker-focused,
+.ant-picker:hover,
+.ant-picker-focused {
   border-color: @from-item-border-base;
 }
 .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled),
 .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
+  background-color: @cascader-menu-item-active;
+}
+
+// 日期选择
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border: 1px solid @from-item-border-base;
+}
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner,
+.ant-picker-week-panel-row-selected td,
+.ant-picker-week-panel-row-selected:hover td,
+.ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
+  .ant-picker-time-panel-cell-inner {
+  background: @from-item-border-base;
+}
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner,
+.ant-picker-week-panel-row-selected:hover td,
+.ant-picker-time-panel-column
+  > li.ant-picker-time-panel-cell-selected
+  .ant-picker-time-panel-cell-inner {
   background-color: @cascader-menu-item-active;
 }
