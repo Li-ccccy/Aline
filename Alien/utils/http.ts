@@ -2,7 +2,7 @@ import axios from "axios";
 import { useLocation } from "@alien/hooks";
 import { watch, onMounted } from "vue";
 
-const Auth = "auth";
+const Auth = "Auth";
 // 登录相关的内容
 export const [auth, setAuth] = useLocation(Auth);
 watch(auth, () => {
@@ -19,10 +19,3 @@ axios.interceptors.request.use(
     return Promise.reject(error);
   }
 );
-
-export const test = () => {
-  onMounted(() => {
-    console.log("@----");
-    console.log(auth.value);
-  });
-};

@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@alien/components": "workspace:*",
+    "@alien/components": "workspace:0.0.1",
     "@alien/hooks": "workspace:^0.0.1",
     "@alien/layout": "workspace:^0.0.1",
     "@alien/utils": "workspace:*"
