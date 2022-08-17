@@ -2,14 +2,11 @@
 import { defineComponent } from "vue";
 import { css } from "@emotion/css";
 type StackType = {
-  inline?: {
-    type: Boolean;
-    default: true;
-  };
+  inline?: Boolean;
   align?: String;
   justify?: String;
   wrap?: String;
-  spacing?: String;
+  spacing?: String | number;
   style?: any;
 };
 

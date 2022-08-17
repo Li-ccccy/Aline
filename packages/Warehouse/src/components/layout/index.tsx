@@ -1,13 +1,13 @@
-import { defineComponent, Ref, watchEffect } from "vue";
+import { defineComponent, Ref, watchEffect, watch } from "vue";
 import { ProLayout, openMenu, Header } from "@alien/layout";
 import { css } from "@emotion/css";
-import { RouterView } from "vue-router";
+import { RouterView, useRoute } from "vue-router";
 import { HeaderHeight } from "./config";
 import { useSwitch, useLocation } from "@alien/hooks";
 import wLogo from "@alien/public/logo/logo-w.png";
 import swLogo from "@alien/public/logo/slogo-w.png";
 import MangeMunuList from "@/router/manageMenu";
-
+import { useTitle } from "@alien/hooks";
 const LogoScelist = (type: Ref<boolean>) => (type.value ? swLogo : wLogo);
 
 export const BasicLayout = defineComponent({
@@ -16,6 +16,7 @@ export const BasicLayout = defineComponent({
     const [menuOpen, setOpen] = useSwitch(
       Boolean(MenuLocal.value === "false" ? false : MenuLocal.value)
     );
+    useTitle();
     watchEffect(() => {
       MenuLocal.value = menuOpen.value;
     });

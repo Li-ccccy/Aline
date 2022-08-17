@@ -58,9 +58,6 @@ export const Base = defineComponent({
     ];
     const value = ref<string[]>([]);
     const checked1 = ref<boolean>(false);
-    watch(value, () => {
-      console.log(value.value);
-    });
     const EchartOptions = {
       title: {
         text: "Traffic Sources",
@@ -98,7 +95,10 @@ export const Base = defineComponent({
         },
       ],
     };
-    console.log(auth.value);
+    // watch(value, () => {
+    //   console.log(value.value);
+    // });
+    // console.log(auth.value);
     return { value, options, checked1, EchartOptions };
   },
   render() {

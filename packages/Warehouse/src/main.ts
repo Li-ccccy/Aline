@@ -6,6 +6,10 @@ import "ant-design-vue/dist/antd.less";
 import "@alien/theme/defult.less";
 import ILogo from "@alien/public/logo/alien.logo.svg";
 
-createApp(App).use(router).mount("#app");
+const app = createApp(App);
+app.use(router);
+app.mount("#app");
+app.config.warnHandler = () => null;
+
 // 创建网页标题中的图标
 createLogo(ILogo);
