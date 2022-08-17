@@ -5,5 +5,5 @@ export interface MenuType {
   path: string;
   name: string;
   children?: Array<MenuType>;
-  icon: VNode;
+  icon?: VNode;
 }

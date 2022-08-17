@@ -132,7 +132,7 @@ export const ProLayout = defineComponent((props: ProLayoutProps, context) => {
               height: props.HeaderHeight,
               padding: "16px",
               img: {
-                width: props.menuOpen.value ? "40px" : "100%",
+                width: props.menuOpen.value ? "40px" : "80%",
               },
               ".fade-leave-active": {
                 width: "0",
@@ -145,10 +145,11 @@ export const ProLayout = defineComponent((props: ProLayoutProps, context) => {
               },
             })}
           >
+            {/* 图片Logo展示区 */}
             <Stack
               justify={"center"}
               align={"center"}
-              style={{ width: "100%" }}
+              style={{ width: "100%", height: "100%" }}
             >
               <Transition name="fade">
                 <img src={props.Logo} alt="" key={props.Logo} />

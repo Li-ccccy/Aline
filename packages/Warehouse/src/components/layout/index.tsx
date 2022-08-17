@@ -6,8 +6,10 @@ import { HeaderHeight } from "./config";
 import { useSwitch, useLocation } from "@alien/hooks";
 import wLogo from "@alien/public/logo/logo-w.png";
 import swLogo from "@alien/public/logo/slogo-w.png";
-import { AppleOutlined, DingdingOutlined } from "@ant-design/icons-vue";
+import MangeMunuList from "@/router/manageMenu";
+
 const LogoScelist = (type: Ref<boolean>) => (type.value ? swLogo : wLogo);
+
 export const BasicLayout = defineComponent({
   setup() {
     const [MenuLocal] = useLocation("MenuLocal");
@@ -23,25 +25,7 @@ export const BasicLayout = defineComponent({
         <ProLayout
           loading={false}
           //菜单项
-          menus={[
-            {
-              path: "/manage/base1",
-              name: "base1",
-              icon: <AppleOutlined></AppleOutlined>,
-            },
-            {
-              path: "/manage/base2",
-              name: "base2",
-              icon: <DingdingOutlined></DingdingOutlined>,
-              children: [
-                {
-                  path: "/manage/base3",
-                  name: "base3",
-                  icon: <DingdingOutlined></DingdingOutlined>,
-                },
-              ],
-            },
-          ]}
+          menus={MangeMunuList}
           menuOpen={menuOpen}
           Logo={LogoScelist(menuOpen)}
           v-slots={{
