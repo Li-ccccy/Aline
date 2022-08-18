@@ -191,7 +191,7 @@ const Filbel = defineComponent({
 const Instructions = defineComponent({
   setup() {
     const msg = [
-      "1:进入系统根目录 ALINEWEBAPP pnpm install 安装全部项目的所有依赖",
+      "1:进入系统根目录 <ALINEWEBAPP> pnpm install 安装全部项目的所有依赖",
       "2: 安装全部项目共有依赖 pnpm add xxxx -w",
       "3: 针对某个项目去安装 pnpm --filter(-F) <package_selector> <command>",
       "4: 公用内容与组件等：需要在Alien中创建，如过需要创建新的模块，需要在对应的文件夹下面创建package.json。特别注意其中的 name:@alien/xxxx",
