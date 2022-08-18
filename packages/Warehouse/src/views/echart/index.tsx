@@ -16,26 +16,19 @@ export const ChartCompoent = defineComponent({
       },
       legend: {
         orient: "vertical",
-        left: "left",
+        left: "right",
       },
       series: [
         {
           name: "Traffic Sources",
           type: "pie",
           radius: "55%",
-          center: ["50%", "60%"],
+          center: ["50%", "50%"],
           data: [
             { value: 335, name: "Direct" },
             { value: 310, name: "Email" },
             { value: 234, name: "Ad Networks" },
           ],
-          emphasis: {
-            itemStyle: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: "rgba(0, 0, 0, 0.5)",
-            },
-          },
         },
       ],
     };
@@ -43,8 +36,8 @@ export const ChartCompoent = defineComponent({
       <>
         <EChart
           class={css({
-            height: "280px",
-            width: "280px",
+            height: "360px",
+            width: "360px",
           })}
           EType={PieChart}
           options={EchartOptions}
