@@ -5,10 +5,8 @@
   "scripts": {
     "start": "node start/index",
     "build": "node start/build",
-    "app:warehouse": "cd packages/Warehouse && pnpm run dev --host",
     "prepare": "husky install"
   },
-  "type": "module",
   "keywords": [],
   "author": "lichaoyu",
   "license": "ISC",
@@ -28,6 +26,8 @@
     "vue-router": "4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@types/js-cookie": "^3.0.2",
     "@types/lodash": "^4.14.182",
     "@types/node": "^18.7.1",
