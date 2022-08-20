@@ -4,6 +4,7 @@ import createLogo from "@alien/utils/createIcon";
 import router from "@/router/index";
 import "ant-design-vue/dist/antd.less";
 import "@alien/theme/defult.less";
+import "@/assets/code.css";
 import ILogo from "@alien/public/logo/alien.logo.svg";
 
 const app = createApp(App);

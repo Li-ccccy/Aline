@@ -1,0 +1,97 @@
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.pl-k {
+  color: #008dff;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.token.tag,
+.token.function,
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.pl-ent,
+.pl-s {
+  color: #f81d22;
+}
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #000;
+  font-family: Lucida Console, Consolas, Monaco, Andale Mono, Ubuntu Mono,
+    monospace;
+  line-height: 1.5;
+  direction: ltr;
+  white-space: pre;
+  text-align: left;
+  word-wrap: normal;
+  word-break: normal;
+  word-spacing: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+pre code {
+  display: block;
+  padding: 16px 32px;
+  color: #000000d9;
+  font-size: 14px;
+  font-family: Lucida Console, Consolas, Monaco, Andale Mono, Ubuntu Mono,
+    monospace;
+  line-height: 2;
+  white-space: pre;
+  background: white;
+  border: 1px solid #e9e9e9;
+  border-radius: 2px;
+}
+.api-container table {
+  display: block;
+  margin: 2em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  font-size: 13px;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+  line-height: 1.5715;
+  border: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.api-container > table th,
+.api-container > table td {
+  padding: 16px 24px;
+  text-align: left;
+  border: 1px solid #f0f0f0;
+}
+.api-container table th:first-child,
+.api-container table td:first-child {
+  border-left: 1px solid #f0f0f0;
+}
+.api-container table th {
+  padding-top: 14px;
+  border-width: 1px 0 2px 0;
+}
+.api-container table th,
+.api-container table td {
+  padding: 12px;
+  border-color: #f0f0f0;
+  border-width: 1px 0;
+}
+/*  */
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--color-canvas-subtle);
+  border-radius: 6px;
+  word-break: normal;
+}

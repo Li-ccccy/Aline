@@ -1,13 +1,16 @@
 import { defineComponent } from "vue";
-import { EChart } from "@alien/components";
+import { EChart, Stack } from "@alien/components";
 import { PieChart } from "echarts/charts";
-import { Stack } from "@alien/components";
 import { css } from "@emotion/css";
+import style from "./echarts.module.css";
+import CodeNav from "@/components/code";
+import Code from "./code.vue";
+import API from "./api.vue";
 export const ChartCompoent = defineComponent({
   setup() {
     const EchartOptions = {
       title: {
-        text: "Traffic Sources",
+        text: "Echarts 图表库",
         left: "center",
       },
       tooltip: {
@@ -20,7 +23,7 @@ export const ChartCompoent = defineComponent({
       },
       series: [
         {
-          name: "Traffic Sources",
+          name: "Echarts 图表库",
           type: "pie",
           radius: "55%",
           center: ["50%", "50%"],
@@ -51,9 +54,21 @@ const ChartNav = defineComponent({
   setup() {
     return () => (
       <>
-        <Stack inline={true} justify={"flex-start"} align={"center"}>
-          <ChartCompoent></ChartCompoent>
-        </Stack>
+        <h1>Echarts 图表库</h1>
+        <div>
+          使用图表需安装 <span class={style.code}>@alien/components</span>
+          组件包
+        </div>
+        <CodeNav
+          v-slots={{
+            code: <Code></Code>,
+            API: <API></API>,
+          }}
+        >
+          <Stack inline={true} justify={"center"} align={"center"}>
+            <ChartCompoent></ChartCompoent>
+          </Stack>
+        </CodeNav>
       </>
     );
   },

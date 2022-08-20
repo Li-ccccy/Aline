@@ -1,10 +1,12 @@
 import { Base, Base2, Base3 } from "@/views/base/index";
 import Docs from "@/views/docs/router";
 import Echart from "@/views/echart/router";
+import Button from "@/views/button/router";
 import { DingdingOutlined, AlignLeftOutlined } from "@ant-design/icons-vue";
 export default [
   Docs,
   Echart,
+  Button,
   {
     path: "/manage/base1",
     name: "测试1",

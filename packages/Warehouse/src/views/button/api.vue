@@ -1,0 +1,110 @@
+<template>
+  <table>
+    <thead>
+      <tr>
+        <th>属性</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>默认值</th>
+        <th>版本</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>block</td>
+        <td>将按钮宽度调整为其父宽度的选项</td>
+        <td>boolean</td>
+        <td><code>false</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>danger</td>
+        <td>设置危险按钮</td>
+        <td>boolean</td>
+        <td><code>false</code></td>
+        <td>2.2.0</td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>按钮失效状态</td>
+        <td>boolean</td>
+        <td><code>false</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ghost</td>
+        <td>幽灵属性，使按钮背景透明</td>
+        <td>boolean</td>
+        <td><code>false</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>href</td>
+        <td>点击跳转的地址，指定此属性 button 的行为和 a 链接一致</td>
+        <td>string</td>
+        <td>-</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>htmlType</td>
+        <td>
+          设置 <code>button</code> 原生的 <code>type</code> 值，可选值请参考
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type"
+            target="_blank"
+            rel="noopener noreferrer"
+            >HTML 标准</a
+          >
+        </td>
+        <td>string</td>
+        <td><code>button</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>icon</td>
+        <td>设置按钮的图标类型</td>
+        <td>v-slot</td>
+        <td>-</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>loading</td>
+        <td>设置按钮载入状态</td>
+        <td>boolean | { delay: number }</td>
+        <td><code>false</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>shape</td>
+        <td>设置按钮形状</td>
+        <td><code>default</code> | <code>circle</code> | <code>round</code></td>
+        <td>'default'</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td>设置按钮大小</td>
+        <td><code>large</code> | <code>middle</code> | <code>small</code></td>
+        <td><code>middle</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>target</td>
+        <td>相当于 a 链接的 target 属性，href 存在时生效</td>
+        <td>string</td>
+        <td>-</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>设置按钮类型</td>
+        <td>
+          <code>primary</code> | <code>ghost</code> | <code>dashed</code> |
+          <code>link</code> | <code>text</code> | <code>default</code>
+        </td>
+        <td><code>default</code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</template>
