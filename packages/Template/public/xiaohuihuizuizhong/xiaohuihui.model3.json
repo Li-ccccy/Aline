@@ -1,0 +1,25 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Xiaohuihui.moc3",
+		"Textures": [
+			"Xiaohuihui.1024/texture_00.png"
+		],
+		"DisplayInfo": "Xiaohuihui.cdi3.json",
+		"Motions": {
+			"": [
+				{
+					"File": "suijidongzuo.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}

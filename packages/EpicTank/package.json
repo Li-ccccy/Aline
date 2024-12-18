@@ -1,0 +1,20 @@
+{
+  "name": "@app/EpicTank",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-alpha.31"
+  },
+  "dependencies": {
+    "@alien/components": "workspace:0.0.1",
+    "@alien/hooks": "workspace:^0.0.1",
+    "@alien/layout": "workspace:^0.0.1",
+    "@alien/utils": "workspace:*"
+  }
+}

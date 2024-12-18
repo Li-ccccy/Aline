@@ -1,0 +1,10 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "小晖晖.moc3",
+		"Textures": [
+			"小晖晖.1024/texture_00.png"
+		],
+		"DisplayInfo": "小晖晖.cdi3.json"
+	}
+}

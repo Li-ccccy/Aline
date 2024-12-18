@@ -1,0 +1,17 @@
+{
+  "name": "@app/Template",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode=production",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@alien/components": "workspace:*",
+    "@alien/hooks": "workspace:*",
+    "@alien/layout": "workspace:*",
+    "@alien/utils": "workspace:*"
+  }
+}
