@@ -2,12 +2,12 @@
 import { defineComponent } from "vue";
 import { css } from "@emotion/css";
 type StackType = {
-  inline?: Boolean;
+  inline?: Boolean; // 排列方向
   align?: String;
   justify?: String;
-  wrap?: String;
-  spacing?: String | number;
-  style?: any;
+  wrap?: String; // 换行
+  spacing?: String | number; // 间距
+  style?: any; // 样式
 };
 
 export const Stack = defineComponent((props: StackType, context: any) => {

@@ -7,7 +7,7 @@ type Headertype = {
   menuOpen: Ref<boolean>;
   setOpen: () => void;
 };
-export const Header = defineComponent((props: Headertype) => {
+export const Header = defineComponent((props: Headertype, ctx) => {
   return () => {
     return (
       <Layout.Header
@@ -40,6 +40,7 @@ export const Header = defineComponent((props: Headertype) => {
             }}
           ></MenuFoldOutlined>
         )}
+        <div>{ctx.slots.default ? ctx.slots.default() : null}</div>
         <div
           class={css({
             flexGrow: 1,
@@ -47,7 +48,7 @@ export const Header = defineComponent((props: Headertype) => {
             flexDirection: "row-reverse",
           })}
         >
-          <div>用户相关</div>
+          {ctx.slots.User ? ctx.slots.User() : null}
           {/* <UserInfo /> */}
         </div>
       </Layout.Header>

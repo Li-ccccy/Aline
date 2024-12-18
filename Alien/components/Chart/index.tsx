@@ -23,6 +23,10 @@ export const EChart = defineComponent({
     options: {
       type: Object,
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     use([
@@ -33,6 +37,12 @@ export const EChart = defineComponent({
       LegendComponent,
       TitleComponent,
     ]);
-    return () => <ECharts option={props.options} autoresize></ECharts>;
+    return () => (
+      <ECharts
+        option={props.options}
+        autoresize
+        loading={props.loading}
+      ></ECharts>
+    );
   },
 });

@@ -1,4 +1,4 @@
-import { VNode } from "vue";
+import { VNode, Ref } from "vue";
 
 export interface MenuType {
   id?: number;
